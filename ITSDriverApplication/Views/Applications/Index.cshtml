@@ -1,0 +1,104 @@
+﻿@model IEnumerable<ITSDriverApplication.Models.Application>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+<p>
+    @Html.ActionLink("Create New Application", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Driver.First_Name)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Create_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Application_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approval_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approval_Duration)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approval_Exp_Date)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approver_LName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Approver_FName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.University_Vehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Rental_Vehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Personal_Vehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Multi_Person_Vehicle)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Comments)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Driver.First_Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Create_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Application_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval_Duration)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approval_Exp_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approver_LName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Approver_FName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.University_Vehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Rental_Vehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Personal_Vehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Multi_Person_Vehicle)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Comments)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Application_ID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Application_ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Application_ID })
+        </td>
+    </tr>
+}
+
+</table>
