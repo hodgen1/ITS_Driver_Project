@@ -5,13 +5,14 @@
 }
 
 <h2>Index</h2>
+
 <p>
-    @Html.ActionLink("Create New Application", "Create")
+    @Html.ActionLink("Create New", "Create")
 </p>
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Driver.First_Name)
+            @Html.DisplayNameFor(model => model.Driver.Regis_ID)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Create_Date)
@@ -55,7 +56,7 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.Driver.First_Name)
+            @Html.DisplayFor(modelItem => item.Driver.Regis_ID)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Create_Date)

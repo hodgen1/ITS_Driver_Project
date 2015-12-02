@@ -1,5 +1,5 @@
 ﻿<%@ Page Title="ITS Driver Application Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
-    CodeBehind="ITS_Driver.aspx.cs" Inherits="ITSDriverApplication.ITS_Driver_Forms.ITS_Driver" %>
+    CodeBehind="ITS_Driver.aspx.cs" Inherits="ITSDriverApplication.ITS_Driver_Forms.ITS_Driver" EnableEventValidation="false" %>
 
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
@@ -71,7 +71,7 @@
     <form>
         <input type="radio" name="Ejob" value="1" checked>
         <b>Employee - Job Required Driver</b> (Driving is a requirement for the employee's position<br />
-        <div style="margin-left: 2em">and applicant will frequely drive for Regis Univeristy)     <b>-   3 Year Duration</b></div>
+        <div style="margin-left: 2em">and applicant will frequently drive for Regis Univeristy)     <b>-   3 Year Duration</b></div>
         <br>
         <input type="radio" name="EOD" value="2">
         <b>Employee - Occasional Driver</b> (Driving is NOT a requirement for the employee's position but
@@ -90,7 +90,7 @@
     </form>
     </p>
     <p>
-        <b>Vehicles that will be driven: </b>(Please check at least on or all that apply)
+        <b>Vehicles that will be driven: </b>(Please check at least one or all that apply)
     <form action="demo_form.asp" method="get">
         <input type="checkbox" name="Vehicle" value="University" checked="checked">
         Licensed University Vehicles<br>
@@ -135,7 +135,8 @@
     </form>
     <p></p>
     <div style="text-align: center">
-        <input type="submit" value="Submit">
+        <%--<input type="submit" value="Submit" onclick="SubmitApplication">--%>
+        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="SubmitApplication" />
     </div>
 
 

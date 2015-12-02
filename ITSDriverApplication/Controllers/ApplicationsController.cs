@@ -23,7 +23,7 @@ namespace ITSDriverApplication.Controllers
         }
 
         // GET: Applications/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -40,7 +40,7 @@ namespace ITSDriverApplication.Controllers
         // GET: Applications/Create
         public ActionResult Create()
         {
-            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "First_Name");
+            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "Regis_ID");
             return View();
         }
 
@@ -58,12 +58,12 @@ namespace ITSDriverApplication.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "First_Name", application.Driver_ID);
+            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "Regis_ID", application.Driver_ID);
             return View(application);
         }
 
         // GET: Applications/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -74,7 +74,7 @@ namespace ITSDriverApplication.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "First_Name", application.Driver_ID);
+            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "Regis_ID", application.Driver_ID);
             return View(application);
         }
 
@@ -91,12 +91,12 @@ namespace ITSDriverApplication.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "First_Name", application.Driver_ID);
+            ViewBag.Driver_ID = new SelectList(db.Drivers, "Driver_ID", "Regis_ID", application.Driver_ID);
             return View(application);
         }
 
         // GET: Applications/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -113,7 +113,7 @@ namespace ITSDriverApplication.Controllers
         // POST: Applications/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Application application = db.Applications.Find(id);
             db.Applications.Remove(application);

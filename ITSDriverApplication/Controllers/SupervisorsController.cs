@@ -22,7 +22,7 @@ namespace ITSDriverApplication.Controllers
         }
 
         // GET: Supervisors/Details/5
-        public ActionResult Details(int? id)
+        public ActionResult Details(string id)
         {
             if (id == null)
             {
@@ -60,7 +60,7 @@ namespace ITSDriverApplication.Controllers
         }
 
         // GET: Supervisors/Edit/5
-        public ActionResult Edit(int? id)
+        public ActionResult Edit(string id)
         {
             if (id == null)
             {
@@ -91,7 +91,7 @@ namespace ITSDriverApplication.Controllers
         }
 
         // GET: Supervisors/Delete/5
-        public ActionResult Delete(int? id)
+        public ActionResult Delete(string id)
         {
             if (id == null)
             {
@@ -108,7 +108,7 @@ namespace ITSDriverApplication.Controllers
         // POST: Supervisors/Delete/5
         [HttpPost, ActionName("Delete")]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteConfirmed(int id)
+        public ActionResult DeleteConfirmed(string id)
         {
             Supervisor supervisor = db.Supervisors.Find(id);
             db.Supervisors.Remove(supervisor);

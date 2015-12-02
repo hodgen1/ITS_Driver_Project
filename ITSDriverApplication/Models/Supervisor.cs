@@ -8,14 +8,14 @@ namespace ITSDriverApplication.Models
     {
         [DatabaseGenerated(DatabaseGeneratedOption.None)]
         [Key]
-        public int Supervisor_ID { get; set; }
+        public string Supervisor_ID { get; set; }
         [Required]
-        public String First_Name { get; set; }
+        public string First_Name { get; set; }
         [Required]
-        public String Last_Name { get; set; }
+        public string Last_Name { get; set; }
         [Required]
-        public String Dept { get; set; }
+        public string Dept { get; set; }
         [Required]
-        public String Email { get; set; }
+        public string Email { get; set; }
     }
 }
