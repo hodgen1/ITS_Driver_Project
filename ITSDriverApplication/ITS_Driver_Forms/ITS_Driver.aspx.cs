@@ -42,7 +42,7 @@ namespace ITSDriverApplication.ITS_Driver_Forms
 
 
             bll.NewApplication(false, false, true, true, regisID, fname, lname, "A", DOB, primaryPhone, altPhone, email, 
-                Models.Driver_Type.Emp_Required, Models.Driver_Status.Active, "DL001234", "CO", DOB, "Geico", DOB, "nolivetto@regis.edu");
+                Models.Driver_Type.Emp_Required, Models.Driver_Status.Active, "DL001234", "CO", DOB, "Geico", "InsPolicyNum", DOB, "nolivetto@regis.edu");
 
             Response.Redirect("~/Default.aspx");
         }
