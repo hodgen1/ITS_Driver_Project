@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using ITSDriverApplication.Models;
 using System.IO;
 
-namespace ITSDriverApplication.DAL
+namespace ITSDriverApplication.App_Code
 {
     public class ITSDriverInitializer : System.Data.Entity.DropCreateDatabaseIfModelChanges<ITSDriverContext>
     {

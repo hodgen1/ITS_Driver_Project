@@ -5,14 +5,21 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2 style="color: #002B49">Please complete the Driver Application</h2>
-    <p>
 
+    <script type="text/javascript">
+        function Update_displayname() {
+            document.getElementById('<%=lbl_displayname.ClientID%>').innerText = document.getElementById('<%=txt_FName.ClientID%>').value
+            + ' ' + document.getElementById('<%=txt_LName.ClientID%>').value;
+        }
+    </script>
+
+    <p>
         <b>First Name:&nbsp;</b>
-        <asp:TextBox ID="txt_FName" runat="server" Style="margin-left: 28px"
+        <asp:TextBox ID="txt_FName" runat="server" onchange="Update_displayname();" Style="margin-left: 28px"
             Width="299px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <b>Last Name:&nbsp;</b>
-        <asp:TextBox ID="txt_LName" runat="server" Width="307px"></asp:TextBox>
+        <asp:TextBox ID="txt_LName" runat="server" onchange="Update_displayname();" Width="307px"></asp:TextBox>
 
     </p>
     <p>
@@ -103,10 +110,7 @@
     </form>
 
     </p>
-    <h7 style="color: #002B49">
-        
-        Driver Information
-     </h7>
+    <h7 style="color: #002B49">Driver Information</h7>
     <p></p>
     <form>
         <b>Driver License: </b>&nbsp;&nbsp; 
@@ -134,11 +138,90 @@
                 name="ins_expiration" size="50" style="width: 168px; margin-left: 87px;">
     </form>
     <p></p>
-    <div style="text-align: center">
-        <%--<input type="submit" value="Submit" onclick="SubmitApplication">--%>
-        <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="SubmitApplication" />
-    </div>
+    <br />
+    <h7 style="color: #002B49">Supervisor Information</h7>
+    <p></p>
+    <b>Supervisor Name/Email/Dept.: </b>&nbsp;&nbsp; 
+            <asp:DropDownList ID="SupervisorDropDownList" runat="server" AppendDataBoundItems="true">
+                <asp:ListItem Text="<Select Supervisor>" Value="0" />
+            </asp:DropDownList>
+    </form> 
+     <p>&nbsp;</p>
+    <h7 style="color: #002B49">
+        
+        Information And Agreement</h7>
+    <p></p>
+    <p>
+        <div style="margin-left: 3em">
+            The University’s property/casualty insurance carrier requires that members of the University community who drive licensed University owned
+            <br />
+            vehicles or who, as part of their routine weekly University responsibilities, drive rental or personal vehicles on University business have
+            <br />
+            acceptable driving records and be properly insured or insurable. The University’s insurance carrier covers all approved individuals who drive
+            <br />
+            University vehicles as well as vehicles rented or rented for University business. The employee’s personally owned vehicle’s liability insurance
+            <br />
+            provides primary coverage. The University’s insurance provides excess liability coverage. The University’s insurance program does not provide
+            <br />
+            coverage for physical damage for personally owned vehicles
+            <br />
+            <p></p>
+            Any employee, student, or volunteer who will drive any licensed Regis University vehicle or who will routinely drive a rental or personal vehicle
+            <br />
+            on behalf of Regis University must, as a condition of initial or continuing employment read the following information, sign the form. In addition,
+            <br />
+            individuals who routinely drive personal vehicles on behalf of the University must provide personal insurance information.  Community members
+            <br />
+            to whom these requirements apply normally may not drive on University business until approval from Auxiliary & Business Services has been
+            <br />
+            received. In addition, a driver applicant who has been disapproved may submit an appeal to the Associate Vice President, Auxiliary & Business
+            <br />
+            Services for consideration by the insurance carrier.
+            <br />
+        </div>
+        <p></p>
 
+        <p class="one">
+            I am aware that consumer and motor vehicle reports may be obtained as part of Regis University’s evaluation of my job application
+            <br />
+            or continuing employment status, volunteer or otherwise.  The reports may be procured by Regis University or its insurance company
+            <br />
+            representative(s), and may include personal information obtained from state motor vehicle department/groups, my driving record, an
+            <br />
+            assessment of my insurability for the insurance program, or other consumer reports.<br>
+            <br />
+            By signing the application, I hereby provide authorization for Regis University or its insurance representative(s) to procure such information
+            <br />
+            and reports, as well as additional reports about me from time-to-time as deemed appropriate, to evaluate my insurability.<br>
 
+            <br />
+            By signing this application I am confirming that I have read and accept the terms and conditions of the <a href="http://tinyurl.com/nop69s6">Vehicle Guidelines and Procedures</a>
+            <br />
+            that are posted on <a href="https://in2.regis.edu/sites/portal/default.aspx">INsite.<br />
+                </div></a>
+        </p>
 
+        <p>
+            <div style="margin-left: 10em; width: 250px;"><b>You have entered your name above as:</b></div>
+            <div style="margin-left: 30em; width: 300px;">
+                <asp:Label ID="lbl_displayname" runat="server" Text="Display Name"></asp:Label>
+            </div>
+        </p>
+
+        <form action="demo_form.asp" method="get">
+            <b>&nbsp;&nbsp;&nbsp; Please re-type your name here to indicate agreement: </b>&nbsp;&nbsp; 
+                <input type="text" name="txt_signature" size="50"
+                    style="width: 568px; margin-left: 5px;" /><br />
+            <br />
+            <b>&nbsp;&nbsp;&nbsp; Checking this box confirms your signature: </b>
+            &nbsp;<input type="checkbox" name="Verify" value="University" checked="checked"
+                style="width: 24px; margin-left: 37px">
+        </form>
+        <br />
+        <br />
+        <div style="text-align: center">
+            <%--<input type="submit" value="Submit" onclick="SubmitApplication">--%>
+            <asp:Button ID="btnSubmit" runat="server" Text="Submit" OnClick="SubmitApplication" />
+        </div>
+        <br />
 </asp:Content>

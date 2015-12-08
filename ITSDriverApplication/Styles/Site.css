@@ -300,3 +300,11 @@ div.accountInfo
     text-align: right;
     padding-right: 10px;
 }
+
+/* banner padding settings */
+p.one {
+    border: 3px solid #ffd200;
+    color: White;
+    background-color: #002B49;
+    padding: 50px 30px 50px 80px;
+}
