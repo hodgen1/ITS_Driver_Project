@@ -11,56 +11,57 @@
 </p>
 <table class="table">
     <tr>
+        <th></th>
         <th>
-            @Html.DisplayNameFor(model => model.Driver.Regis_ID)
+            Regis ID
         </th>
         <td>
-            @Html.DisplayNameFor(model => model.First_Name)
+            First Name
         </td>
         <td>
-            @Html.DisplayNameFor(model => model.Last_Name)
+            Last Name
         </td>
         <td>
-            @Html.DisplayNameFor(model => model.Middle_Initial)
+            Middle Initial
         </td>
         <td>
-            @Html.DisplayNameFor(model => model.DL_Number)
+            Driver License Number
         </td>
         <th>
-            @Html.DisplayNameFor(model => model.Create_Date)
+            Create Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Application_Status)
+            Application Status
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Approval_Date)
+            Approval Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Approval_Duration)
+            Approval Duration
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Approval_Exp_Date)
+            Approval Expiration Date
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Approver_LName)
+            Approver Last Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Approver_FName)
+            Approver First Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.University_Vehicle)
+            University Vehicle
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Rental_Vehicle)
+            Rental Vehicle
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Personal_Vehicle)
+            Personal Vehicle
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Multi_Person_Vehicle)
+            Multi-Person Vehicle
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Comments)
+            Comments
         </th>
         <th></th>
     </tr>
@@ -68,19 +69,22 @@
 @foreach (var item in Model) {
     <tr>
         <td>
+            @Html.ActionLink("Details", "Details", new { id = item.Application_ID })
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => item.Driver.Regis_ID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.First_Name)
+            @Html.DisplayFor(modelItem => item.Driver.First_Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Last_Name)
+            @Html.DisplayFor(modelItem => item.Driver.Last_Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Middle_Initial)
+            @Html.DisplayFor(modelItem => item.Driver.Middle_Initial)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.DL_Number)
+            @Html.DisplayFor(modelItem => item.Driver.DL_Number)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.Create_Date)
@@ -119,8 +123,6 @@
             @Html.DisplayFor(modelItem => item.Comments)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Application_ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Application_ID }) |
             @Html.ActionLink("Delete", "Delete", new { id=item.Application_ID })
         </td>
     </tr>
