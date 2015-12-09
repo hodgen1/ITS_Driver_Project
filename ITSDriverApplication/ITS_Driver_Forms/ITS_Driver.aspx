@@ -9,18 +9,20 @@
     <script type="text/javascript">
         function Update_displayname() {
             document.getElementById('<%=lbl_displayname.ClientID%>').innerText = document.getElementById('<%=txt_FName.ClientID%>').value
-            + ' ' + document.getElementById('<%=txt_LName.ClientID%>').value;
+            + ' ' + document.getElementById('<%=txt_M_Initial.ClientID%>').value + ' ' + document.getElementById('<%=txt_LName.ClientID%>').value;
         }
     </script>
 
     <p>
         <b>First Name:&nbsp;</b>
         <asp:TextBox ID="txt_FName" runat="server" onchange="Update_displayname();" Style="margin-left: 28px"
-            Width="299px"></asp:TextBox>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            Width="255px"></asp:TextBox>
+        &nbsp;
+        <b>Middle Initial:&nbsp;</b>
+        <asp:TextBox ID="txt_M_Initial" runat="server" onchange="Update_displayname();" Width="30px" MaxLength="1"></asp:TextBox>
+        &nbsp;
         <b>Last Name:&nbsp;</b>
-        <asp:TextBox ID="txt_LName" runat="server" onchange="Update_displayname();" Width="307px"></asp:TextBox>
-
+        <asp:TextBox ID="txt_LName" runat="server" onchange="Update_displayname();" Width="252px"></asp:TextBox>
     </p>
     <p>
 
@@ -34,7 +36,7 @@
         <asp:TextBox ID="txt_Phone" runat="server" Width="255px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <b>Alternate Phone:&nbsp;&nbsp;</b>
-        <asp:TextBox ID="txt_altPhone" runat="server" Width="281px"></asp:TextBox>
+        <asp:TextBox ID="txt_altPhone" runat="server" Width="285px"></asp:TextBox>
 
     </p>
     <p>

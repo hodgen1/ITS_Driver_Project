@@ -22,6 +22,15 @@ namespace ITSDriverApplication.ITS_Driver_Forms {
         protected global::System.Web.UI.WebControls.TextBox txt_FName;
         
         /// <summary>
+        /// txt_M_Initial control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txt_M_Initial;
+        
+        /// <summary>
         /// txt_LName control.
         /// </summary>
         /// <remarks>

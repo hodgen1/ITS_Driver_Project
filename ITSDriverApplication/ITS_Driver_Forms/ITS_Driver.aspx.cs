@@ -34,6 +34,8 @@ namespace ITSDriverApplication.ITS_Driver_Forms
             string email = txt_Email.Text;
             string regisID = txt_RegisID.Text;
 
+
+            // Used for email
             string subject = "New Driver Application Form";
             string body = "A new driver application form has been submitted for " + fname 
                 + " " + lname + ".";
