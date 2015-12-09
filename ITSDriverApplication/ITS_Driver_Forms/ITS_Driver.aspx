@@ -69,7 +69,11 @@
      </h7>
     <p></p>
     <form>
-        <input type="radio" name="Ejob" value="1" checked>
+        <input type="radio" name="SWSP" value="3" checked>
+        <b>Student/Work-study Program</b> (Driving is a requirement for a student that will drive<br />
+        <div style="margin-left: 2em">for Regis Univeristy business)    <b>-   1 Year Duration</b></div>
+        <br>
+        <input type="radio" name="Ejob" value="1">
         <b>Employee - Job Required Driver</b> (Driving is a requirement for the employee's position<br />
         <div style="margin-left: 2em">and applicant will frequently drive for Regis Univeristy)     <b>-   3 Year Duration</b></div>
         <br>
@@ -77,10 +81,6 @@
         <b>Employee - Occasional Driver</b> (Driving is NOT a requirement for the employee's position but
         <br />
         <div style="margin-left: 2em">applicant may occasionally drive for Regis Univeristy)    <b>-   3 Year Duration</b></div>
-        <br>
-        <input type="radio" name="SWSP" value="3">
-        <b>Student/Work-study Program</b> (Driving is a requirement for a student that will drive<br />
-        <div style="margin-left: 2em">for Regis Univeristy business)    <b>-   1 Year Duration</b></div>
         <br>
         <input type="radio" name="Vol" value="4">
         <b>Volunteer</b> (Applicant will drive for retreats/special events. Applicant may or may not be a

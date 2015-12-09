@@ -49,7 +49,7 @@ namespace ITSDriverApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Application_ID,Driver_ID,Create_Date,Application_Status,Approval_Date,Approval_Duration,Approval_Exp_Date,Approver_LName,Approver_FName,University_Vehicle,Rental_Vehicle,Personal_Vehicle,Multi_Person_Vehicle,Comments")] Application application)
+        public ActionResult Create([Bind(Include = "Application_ID,Driver_ID,First_Name,Last_Name,Middle_Initial,DL_Number,Create_Date,Application_Status,Approval_Date,Approval_Duration,Approval_Exp_Date,Approver_LName,Approver_FName,University_Vehicle,Rental_Vehicle,Personal_Vehicle,Multi_Person_Vehicle,Comments")] Application application)
         {
             if (ModelState.IsValid)
             {
@@ -83,7 +83,7 @@ namespace ITSDriverApplication.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Application_ID,Driver_ID,Create_Date,Application_Status,Approval_Date,Approval_Duration,Approval_Exp_Date,Approver_LName,Approver_FName,University_Vehicle,Rental_Vehicle,Personal_Vehicle,Multi_Person_Vehicle,Comments")] Application application)
+        public ActionResult Edit([Bind(Include = "Application_ID,Driver_ID,First_Name,Last_Name,Middle_Initial,DL_Number,Create_Date,Application_Status,Approval_Date,Approval_Duration,Approval_Exp_Date,Approver_LName,Approver_FName,University_Vehicle,Rental_Vehicle,Personal_Vehicle,Multi_Person_Vehicle,Comments")] Application application)
         {
             if (ModelState.IsValid)
             {

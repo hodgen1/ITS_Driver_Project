@@ -17,6 +17,14 @@ namespace ITSDriverApplication.Models
         [Required]
         public string Driver_ID { get; set; }
         [Required]
+        public string First_Name { get; set; }
+        [Required]
+        public string Last_Name { get; set; }
+        [Required]
+        public string Middle_Initial { get; set; }
+        [Required]
+        public string DL_Number { get; set; }
+        [Required]
         public DateTime Create_Date { get; set; } // System Date
         [Required]
         public Application_Status Application_Status { get; set; }
@@ -30,7 +38,6 @@ namespace ITSDriverApplication.Models
         public bool Personal_Vehicle { get; set; }
         public bool Multi_Person_Vehicle { get; set; }
         public string Comments { get; set; }
-
         public virtual Driver Driver { get; set; }
     }
 }

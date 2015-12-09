@@ -7,6 +7,15 @@
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
+    <style type="text/css">
+        .auto-style1 {
+            font-size: medium;
+            color: #000066;
+        }
+        .auto-style2 {
+            color: #000066;
+        }
+    </style>
 </head>
 <body>
     <form runat="server">
@@ -14,7 +23,7 @@
         <div class="header">
             <div class="title">
                 <h1>
-                    Welcome To Regis University ITS Driver Application
+                    Welcome To Regis University Driver Application
                 </h1>
             </div>
             <div class="loginDisplay">
@@ -38,7 +47,14 @@
             </div>
         </div>
         <div class="main">
-            <asp:ContentPlaceHolder ID="MainContent" runat="server"/>
+            <asp:ContentPlaceHolder ID="MainContent" runat="server">
+                <h4 class="auto-style1">
+                    This is the official Regis University Driver Application Site.
+                </h4>
+                <p class="auto-style2">
+                    All students, faculty, volunteers, and university employees that wish to drive for the university must complete an application. The application must be approved by the Department of Auxiliary and Business Services prior to driving for the university.
+                </p>
+            </asp:ContentPlaceHolder>
         </div>
         <div class="clear">
         </div>
