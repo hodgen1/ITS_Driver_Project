@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using ITSDriverApplication.DAL;
+using ITSDriverApplication.App_Code;
 using ITSDriverApplication.Models;
 
 namespace ITSDriverApplication.Controllers
