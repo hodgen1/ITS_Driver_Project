@@ -16,14 +16,6 @@ namespace ITSDriverApplication.Models
         public string Application_ID { get; set; }
         [Required]
         public string Driver_ID { get; set; }
-        //[Required]
-        //public string First_Name { get; set; }
-        //[Required]
-        //public string Last_Name { get; set; }
-        //[Required]
-        //public string Middle_Initial { get; set; }
-        //[Required]
-        //public string DL_Number { get; set; }
         [Required]
         public DateTime Create_Date { get; set; } // System Date
         [Required]

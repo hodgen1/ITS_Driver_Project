@@ -35,7 +35,6 @@ namespace ITSDriverApplication.App_Code
             string Email, Driver_Type DriverType, Driver_Status DriverStatus, string DLNumber, string DLState, DateTime DLExpDate, string InsName, string InsPolicyNumber, DateTime InsPolicyExpDate,
             string SupervisorEmail)
         {
-
             using (var db = new ITSDriverContext())
             {
                 db.Database.ExecuteSqlCommand(
@@ -64,7 +63,6 @@ namespace ITSDriverApplication.App_Code
                     new SqlParameter("@InsPolicyExpDate", InsPolicyExpDate),
                     new SqlParameter("@SupervisorEmail", SupervisorEmail)
                     );
-
                 return true;
             }
         }

@@ -5,6 +5,9 @@
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
     <h2 style="color: #002B49">Please complete the Driver Application</h2>
+    <p>
+        <font color="red"><b><i>Note: All required fields are marked with a red asterisk (*), and should be filled in before submitting form.</i></b></font>
+    </p>
 
     <script type="text/javascript">
         function Update_displayname() {
@@ -12,27 +15,29 @@
             + ' ' + document.getElementById('<%=txt_M_Initial.ClientID%>').value + ' ' + document.getElementById('<%=txt_LName.ClientID%>').value;
         }
     </script>
-
+            <style type="text/css">
+            .bold {
+                font: bold;
+            }
+        </style>
     <p>
-        <b>First Name:&nbsp;</b>
+        <b>First Name:<font color="red">*</font>&nbsp;</b>
         <asp:TextBox ID="txt_FName" runat="server" onchange="Update_displayname();" Style="margin-left: 28px"
             Width="255px"></asp:TextBox>
         &nbsp;
         <b>Middle Initial:&nbsp;</b>
         <asp:TextBox ID="txt_M_Initial" runat="server" onchange="Update_displayname();" Width="30px" MaxLength="1"></asp:TextBox>
         &nbsp;
-        <b>Last Name:&nbsp;</b>
+        <b>Last Name:<font color="red">*</font>&nbsp;</b>
         <asp:TextBox ID="txt_LName" runat="server" onchange="Update_displayname();" Width="252px"></asp:TextBox>
     </p>
-    <p>
 
-        <b>DOB</b>:&nbsp;&nbsp;
+        <b>DOB</b>:<font color="red">*</font>&nbsp;&nbsp;
         <asp:TextBox ID="txt_DOB" runat="server" Style="margin-left: 62px"></asp:TextBox>
-
-    </p>
+        <font color="red">(MM/DD/YYYY)</font>
     <p>
 
-        <b>Primary Phone:&nbsp;&nbsp;</b>
+        <b>Primary Phone:<font color="red">*</font>&nbsp;&nbsp;</b>
         <asp:TextBox ID="txt_Phone" runat="server" Width="255px"></asp:TextBox>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
         <b>Alternate Phone:&nbsp;&nbsp;</b>
@@ -41,7 +46,7 @@
     </p>
     <p>
 
-        <b>Email:&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
+        <b>Email:<font color="red">*</font>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b>
         <asp:TextBox ID="txt_Email" runat="server" Style="margin-left: 45px"
             Width="731px"></asp:TextBox>
 
@@ -52,7 +57,7 @@
     </p>
     <!-- html indentation for block paragraph for message to user input -->
     <div style="margin-left: 5em; width: 507px;">
-        Note: If you have been assigned a Regis I.D. Number. please choose Yes and
+        <font color="red">*</font>Note: If you have been assigned a Regis I.D. Number. please choose Yes and
         <br />
         enter that number. If you have not been assigend an I.D. number, please
         <br />
@@ -62,8 +67,8 @@
 
     <form>
         <div style="margin-left: 10em; width: 300px;">
-            <input type="radio" name="RID" value="Yes" checked>Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<asp:TextBox
-                ID="txt_RegisID" runat="server" Style="margin-left: 42px" Width="108px"></asp:TextBox><br>
+            <input type="radio" name="RID" value="Yes" checked>Yes&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <asp:TextBox ID="txt_RegisID" runat="server" Style="margin-left: 42px" Width="108px"></asp:TextBox><br>
             <input type="radio" name="RID" value="No">
         No
     </form>
@@ -77,77 +82,64 @@
         Driver Type and Vehicle 
      </h7>
     <p></p>
-    <form>
-        <input type="radio" name="SWSP" value="3" checked>
-        <b>Student/Work-study Program</b> (Driving is a requirement for a student that will drive<br />
-        <div style="margin-left: 2em">for Regis Univeristy business)    <b>-   1 Year Duration</b></div>
-        <br>
-        <input type="radio" name="Ejob" value="1">
-        <b>Employee - Job Required Driver</b> (Driving is a requirement for the employee's position<br />
-        <div style="margin-left: 2em">and applicant will frequently drive for Regis Univeristy)     <b>-   3 Year Duration</b></div>
-        <br>
-        <input type="radio" name="EOD" value="2">
-        <b>Employee - Occasional Driver</b> (Driving is NOT a requirement for the employee's position but
-        <br />
-        <div style="margin-left: 2em">applicant may occasionally drive for Regis Univeristy)    <b>-   3 Year Duration</b></div>
-        <br>
-        <input type="radio" name="Vol" value="4">
-        <b>Volunteer</b> (Applicant will drive for retreats/special events. Applicant may or may not be a
-        <br />
-        <div style="margin-left: 2em">Regis University employee)     <b>-   1 Year Duration</b></div>
-        <br>
-    </form>
+    
+        <asp:RadioButtonList ID="driverTypeRBtnList" runat="server">
+            <asp:ListItem Value="1" Selected="True" Text="<span class='bold'>Student/Work-study Program</span> (Driving is a requirement for a student that will drive </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;for Regis Univeristy business)   <span class='bold'> -   1 Year Duration</span>" />
+            <asp:ListItem Value="2" Text="<span class='bold'>Employee - Job Required Driver</span> (Driving is a requirement for the employee's position </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;and applicant will frequently drive for Regis Univeristy)    <span class='bold'> -   3 Year Duration</span>" />
+            <asp:ListItem Value="3" Text="<span class='bold'>Employee - Occasional Driver</span> (Driving is NOT a requirement for the employee's position </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;but applicant may occasionally drive for Regis Univeristy)   <span class='bold'> -   3 Year Duration</span>" />
+            <asp:ListItem Value="4" Text="<span class='bold'>Volunteer</span> (Applicant will drive for retreats/special events. Applicant may or may not be </br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;a Regis University employee)    <span class='bold'> -   1 Year Duration</span>" />
+
+
+        </asp:RadioButtonList>
+  
     </p>
     <p>
-        <b>Vehicles that will be driven: </b>(Please check at least one or all that apply)
-    <form action="demo_form.asp" method="get">
-        <input type="checkbox" name="Vehicle" value="University" checked="checked">
+        <b>Vehicles that will be driven: </b>(Please check at least one or all that apply)<font color="red">*</font>
+        <br>
+        <asp:CheckBox runat="server" ID="ckbxUniversity" value="University" Checked="true" />
         Licensed University Vehicles<br>
-        <input type="checkbox" name="vehicle" value="Rental">
+        <asp:CheckBox ID="ckbxRental" runat="server" value="Rental" />
         Rental<br>
-        <input type="checkbox" name="vehicle" value="Personal">
+        <asp:CheckBox ID="ckbxPersonal" runat="server" value="Personal" />
         Personal Vehicle on University Business<br>
-        <input type="checkbox" name="vehicle" value="Multiple">
+        <asp:CheckBox ID="ckbxMultiple" runat="server" value="Multiple" />
         Multiple Person Vehicle (ex: Bus or shuttle)<br>
-    </form>
+   
 
     </p>
     <h7 style="color: #002B49">Driver Information</h7>
     <p></p>
-    <form>
-        <b>Driver License: </b>&nbsp;&nbsp; 
-            <input type="text" name="Driver_License"
-                size="25" style="margin-left: 14px; width: 179px;">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
-            <b>License State: </b>&nbsp;&nbsp;
-        <input type="text" name="State" size="10">
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
-            <b>Expiration Date: </b>&nbsp;&nbsp; 
-            <input type="text" name="DL_Expiration"
-                size="35" style="margin-left: 5px; width: 125px;">
+    
+        <b>Driver License:<font color="red">*</font> </b>&nbsp;&nbsp; 
+            <asp:TextBox ID="txtDriverLicense" runat="server" size="25" Style="margin-left: 14px; width: 179px;" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;    
+            <b>License State:<font color="red">*</font></b>&nbsp;&nbsp;
+         <asp:TextBox ID="txtState" runat="server" size="10" Width="60px" MaxLength="2" />
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+            <b>Expiration Date:<font color="red">*</font> </b>&nbsp;&nbsp; 
+         <asp:TextBox ID="txtDLExpirationDate" runat="server" 
+                 size="35" Style="margin-left: 5px; width: 125px;" />
+         <font color="red">(MM/DD/YYYY)</font>
         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<br />
         <p></p>
-        <b>Personal Vehicle Insurance Company: </b>&nbsp;&nbsp;
-        <input type="text"
-            name="ins_company" size="50" style="width: 562px">
+        <b>Personal Vehicle Insurance Company:<font color="red">*</font> </b>&nbsp;&nbsp;
+        <asp:TextBox ID="txtInsCompany" runat="server" size="50" Style="width: 562px" />
         <p></p>
-        <b>Insurance Policy #: </b>&nbsp;&nbsp; 
-            <input type="text"
-                name="ins_policy" size="50" style="width: 562px; margin-left: 112px;">
+        <b>Insurance Policy #:<font color="red">*</font> </b>&nbsp;&nbsp; 
+             <asp:TextBox ID="txtInsPolicyNumber" runat="server" size="50" Style="width: 562px; margin-left: 112px;" />
         <p></p>
-        <b>Policy Expiration Date: </b>&nbsp;&nbsp; 
-            <input type="text"
-                name="ins_expiration" size="50" style="width: 168px; margin-left: 87px;">
-    </form>
+        <b>Policy Expiration Date:<font color="red">*</font> </b>&nbsp;&nbsp; 
+             <asp:TextBox ID="txtPolicyExpirationDate" runat="server" size="50" Style="width: 168px; margin-left: 87px;" />
+             <font color="red">(MM/DD/YYYY)</font>
     <p></p>
     <br />
     <h7 style="color: #002B49">Supervisor Information</h7>
     <p></p>
-    <b>Supervisor Name/Email/Dept.: </b>&nbsp;&nbsp; 
-            <asp:DropDownList ID="SupervisorDropDownList" runat="server" AppendDataBoundItems="true">
+    <b>Supervisor Name/Email/Dept.: <font color="red">*</font></b>&nbsp;&nbsp; 
+            <asp:DropDownList ID="supervisorDropDownList" runat="server" AppendDataBoundItems="true">
                 <asp:ListItem Text="<Select Supervisor>" Value="0" />
             </asp:DropDownList>
-    </form> 
+     
      <p>&nbsp;</p>
     <h7 style="color: #002B49">
         
@@ -210,15 +202,14 @@
             </div>
         </p>
 
-        <form action="demo_form.asp" method="get">
-            <b>&nbsp;&nbsp;&nbsp; Please re-type your name here to indicate agreement: </b>&nbsp;&nbsp; 
+            <b>&nbsp;&nbsp;&nbsp; Please re-type your name here to indicate agreement:<font color="red">*</font> </b>&nbsp;&nbsp; 
                 <input type="text" name="txt_signature" size="50"
                     style="width: 568px; margin-left: 5px;" /><br />
             <br />
-            <b>&nbsp;&nbsp;&nbsp; Checking this box confirms your signature: </b>
-            &nbsp;<input type="checkbox" name="Verify" value="University" checked="checked"
+            <b>&nbsp;&nbsp;&nbsp; Checking this box confirms your signature:<font color="red">*</font> </b>
+            &nbsp;<input type="checkbox" name="Verify" checked="checked"
                 style="width: 24px; margin-left: 37px">
-        </form>
+
         <br />
         <br />
         <div style="text-align: center">

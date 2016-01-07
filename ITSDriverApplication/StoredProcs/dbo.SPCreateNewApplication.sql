@@ -25,26 +25,23 @@ CREATE PROCEDURE [dbo].[SPCreateNewApplication]
 	@InsPolicyNumber nvarchar(100),
 	@InsPolicyExpDate DateTime,
 	@SupervisorEmail nvarchar(50),
-	--@SupervisorID uniqueidentifier
 	
 	-- Application specific parameters	
 	@IsUniversityVehicle bit,
 	@IsRentalVehicle bit,
 	@IsPersonalVehicle bit,
 	@IsMultiPersonVehicle bit
-
 	
 AS
 BEGIN
 
 	SET NOCOUNT ON
-
 	
 	--=========================================================================================================================================================================================
 -- CREATE/UPDATE DRIVER
 	BEGIN TRANSACTION
 	
-	-- Create temp table
+-- CREATE TEMP TABLE SINCE LOCAL VARIABLES DON'T WORK USING EF
 	CREATE TABLE #DriverTemp(
 	Driver_ID NVARCHAR (128) NOT NULL,
 	DL_Number NVARCHAR (50) NOT NULL
@@ -98,7 +95,7 @@ BEGIN
 	COMMIT TRANSACTION
 	
 	
-	-- Create the application
+-- Create the application
 	BEGIN TRANSACTION
 	INSERT INTO Application (Application_ID, Driver_ID, Create_Date, Application_Status,
 			 University_Vehicle, Rental_Vehicle, Personal_Vehicle, Multi_Person_Vehicle)	
